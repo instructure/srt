@@ -31,8 +31,11 @@ describe SRT::Line do
       line.start_time = 224.2
       line.end_time = 244.578
     end
-    it "should produce timecodes that match the internal float values" do
-      expect(line.to_s).to eq("1\n00:03:44,200 --> 00:04:04,578\n\n")
+    
+    context "with empty content" do
+      it "creates a valid empty node" do
+        expect(line.to_s).to eq("1\n00:03:44,200 --> 00:04:04,578\n\n")
+      end
     end
   end
 end
