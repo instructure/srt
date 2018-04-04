@@ -42,7 +42,7 @@ module SRT
 
     def to_s(time_str_function=:time_str)
       # ensure a new line is added for an empty text block
-      txt = if text.empty? then [""] else text end
+      txt = text.empty? ? [""] : text
       [sequence, (display_coordinates ? send(time_str_function) + display_coordinates : send(time_str_function)), txt , ''].flatten.join("\n")
     end
   end
